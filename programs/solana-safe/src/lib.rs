@@ -13,3 +13,10 @@ pub mod solana_safe {
 
 #[derive(Accounts)]
 pub struct Initialize {}
+
+#[account]
+pub struct Safe {
+    pub owner: Pubkey,
+    pub name: String,
+    pub balance: u64,
+}
