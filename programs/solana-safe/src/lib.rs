@@ -20,3 +20,16 @@ pub struct Safe {
     pub name: String,
     pub balance: u64,
 }
+
+const DISCRIMINATOR_LENGTH: usize = 8;
+const PUBLIC_KEY_LENGTH: usize = 32;
+const STRING_LENGTH_PREFIX: usize = 4;
+const MAX_NAME_LENGTH: usize = 40 * 4;
+const BALANCE_LENGTH: usize = 8;
+
+impl Safe {
+    const LEN: usize = DISCRIMINATOR_LENGTH
+        + PUBLIC_KEY_LENGTH // Owner
+        + STRING_LENGTH_PREFIX + MAX_NAME_LENGTH // Name
+        + BALANCE_LENGTH; // Balance
+}
