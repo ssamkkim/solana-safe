@@ -30,22 +30,22 @@ pub struct InitializeSafe<'info> {
     pub system_program: Program<'info, System>,
 }
 
-#[derive(Accounts)]
-pub struct Deposit<'info> {
-    #[account(mut)]
-    pub safe: Account<'info, Safe>,
-    #[account(mut, signer)]
-    pub owner: Signer<'info>,
-    pub system_program: Program<'info, System>,
-}
+// #[derive(Accounts)]
+// pub struct Deposit<'info> {
+//     #[account(mut)]
+//     pub safe: Account<'info, Safe>,
+//     #[account(mut, signer)]
+//     pub owner: Signer<'info>,
+//     pub system_program: Program<'info, System>,
+// }
 
-#[derive(Accounts)]
-pub struct Withdraw<'info> {
-    #[account(mut)]
-    pub safe: Account<'info, Safe>,
-    pub owner: Signer<'info>,
-    pub system_program: Program<'info, System>,
-}
+// #[derive(Accounts)]
+// pub struct Withdraw<'info> {
+//     #[account(mut)]
+//     pub safe: Account<'info, Safe>,
+//     pub owner: Signer<'info>,
+//     pub system_program: Program<'info, System>,
+// }
 
 #[account]
 pub struct Safe {
